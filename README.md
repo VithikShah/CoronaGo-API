@@ -1,5 +1,4 @@
-# PayBlocks - Data Storage and smart payments using Blockchain
-
+# CoronaGo - Flask API
 - Step 1: Training the model 
 For this you will need to add face data to the cognitive services . You will need to change the end point and the provided key the in code to run it on your systems ./
 a.First run the file add_student.py , and add the details . Pictures will be clicked during this time ./
@@ -26,6 +25,36 @@ b. Now the person needs to click his/her picture to login .
 c. Now you will have options such as pay someone or buy medicines . 
 d. You may choose anyone of them to proceed further . These are blockchain based features 
 
+
+## Contents 
+* [End Users](#end-users-)
+* [Modules](#modules-)
+
+## End Users [&uarr;](#contents)
+- There are three kind of end users of the application
+- **Chemist** 
+- **Doctor**
+- **Citizen**
+
+## Modules [&uarr;](#contents)
+### Live COVID-19 Global Status
+- Live updates on the statistics related to COVID-19 cases worldwide.
+- Accessible by anyone, no need for signin.
+
+### Quarantine Check
+- Face scanner based check the status of a person: If a person is (corona positive/ meant to be quarantined/ normal).
+- Accessible by anyone, no need for signin.
+
+### Visual Base Authentication
+- Face scanner based authentications and login.
+- Can login with email and password too.
+
+### Face Recognition based payment system
+- Online Wallet system based on face recognition
+
+### Prescription Module based on Face Recognition
+- Doctors can add prescription for a patient, also they can change status of a person as  positive/ meant to be quarantined/ normal.
+- Chemists can view the prescription of a particular patient by face recognition
 
 ## Contributors and maintainers [&uarr;](#contents)
 
