@@ -40,6 +40,7 @@ This project and repository is created and maintained by:
 ### Project created under the [HackCovid19](https://hackcovid19.devfolio.co) hackathon
 
 ### Team name: codeonkailash
+### Team members:
 
 * **Yuvraj Dalia (Team Lead)**
 
