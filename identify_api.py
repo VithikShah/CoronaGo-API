@@ -76,22 +76,23 @@ def payment():
 		row = c.fetchone()
 
 		account_1 = request.form.get('publickey')
-		account_1 = account_1[1:-1]
+		# account_1 = account_1[1:-1]
 		account_2 = row[4]
 
 		private_key = request.form.get('privatekey')
-		private_key = private_key[1:-1]
+		# private_key = private_key[1:-1]
 		print('private_key', private_key)
 
-		amount = int(request.form.get('amount'))
+		amount = float(request.form.get('amount'))
 		print(amount)
 		connect.commit() 
 		connect.close()
 		ganache_url = "http://ec2-54-175-197-129.compute-1.amazonaws.com:8545"
 		web3 = Web3(Web3.HTTPProvider(ganache_url))
-		web3.eth.defaultAccount = account1
+		web3.eth.defaultAccount = account_1
 		nonce = web3.eth.getTransactionCount(account_1)
-		
+		if int(web3.eth.getBalance(account_1)) < int(amount*(10**18)):
+			return jsonify({"status": "error"})		
 		print(nonce)
 		tx = {
 		    'nonce': nonce,
@@ -103,11 +104,9 @@ def payment():
 
 		signed_tx = web3.eth.account.signTransaction(tx, private_key)
 
-
-
 		tx_hash = web3.eth.sendRawTransaction(signed_tx.rawTransaction)
 		print(web3.toHex(tx_hash))
-		return jsonify({"tx_hash": web3.toHex(tx_hash)})
+		return jsonify({"status": "success", "tx_hash": web3.toHex(tx_hash)})
 	else:
 		return render_template('index.html')
 
@@ -157,7 +156,7 @@ def login():
 		c.execute("SELECT * FROM Students WHERE personID = ?", (res,))
 		row = c.fetchone()
 
-		return jsonify({"name": row[1], "publickey":row[4], "privatekey": row[5], "persontype": row[9]})
+		return jsonify({"name": row[1], "publickey":row[4], "privatekey": row[5], "type": row[9]})
 
 # @app.route('/getmedicines', methods=['POST'])
 
@@ -274,19 +273,20 @@ def addinfo():
 		web3.eth.defaultAccount = publickey
 		
 		medicines = request.form.get('medicines')
-		contract.functions.addmedicines(medicines).call()
+		contract.functions.addmedicines(medicines).transact()
+		print(request.form.get('status'))
 		status = int(request.form.get('status'))
-		contract.functions.updatestatus(status).call()
+		contract.functions.updatestatus(status).transact()
 
 		return jsonify({"status":'success'})
 
 
-@app.route('/getbalance', methods=['POST'])
-def getbalance():
+@app.route('/balance', methods=['POST'])
+def balance():
 	if request.method == 'POST':
 		ganache_url = "http://ec2-54-175-197-129.compute-1.amazonaws.com:8545"
 		web3 = Web3(Web3.HTTPProvider(ganache_url))
-		balance = web3.eth.getBalance(request.form.get('publickey')[1:-1])
+		balance = web3.eth.getBalance(request.form.get('publickey'))
 		return jsonify({"balance": balance})
 
 
