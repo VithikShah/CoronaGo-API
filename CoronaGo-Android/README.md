@@ -37,7 +37,11 @@ CoronaGo Android Application has the following modules:
 
 This project and repository is created and maintained by:
 
-* **Yuvraj Dalia**
+### Project created under the [HackCovid19](https://hackcovid19.devfolio.co) hackathon
+
+### Team name: codeonkailash
+
+* **Yuvraj Dalia (Team Lead)**
 
  Email: yuvrajdalia98@gmail.com
     
