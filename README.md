@@ -25,9 +25,3 @@ a.Next you need to run the apk in your mobile from anroid studio .
 b. Now the person needs to click his/her picture to login .
 c. Now you will have options such as pay someone or buy medicines . 
 d. You may choose anyone of them to proceed further . These are blockchain based features 
-
-
-This project was done in HackVerse by :
-Vithik Shah
-Manas Gupta 
-Yuvraj Dalia ( Team Admin)
