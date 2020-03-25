@@ -26,9 +26,9 @@ import json
 
 app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
-app.config["IMAGE_UPLOADS"] = "/home/stark/hack/CoronaGo-API/uploads"
-app.config["LOGIN"] = "/home/stark/hack/CoronaGo-API/login"
-app.config["IMG_MEDICINES"] = "/home/stark/hack/CoronaGo-API/medicines"
+app.config["IMAGE_UPLOADS"] = os.getcwd() + "/uploads"
+app.config["LOGIN"] = os.getcwd() + "/login"
+app.config["IMG_MEDICINES"] = os.getcwd() + "/medicines"
 
 
 
@@ -97,7 +97,7 @@ def payment():
 		tx = {
 		    'nonce': nonce,
 		    'to': account_2,
-		    'value': web3.toWei(amount, 'ether'),
+		    'value': web3.toWei(amount, 'ether'), 
 		    'gas': 2000000,
 		    'gasPrice': web3.toWei('50', 'gwei'),
 		}
