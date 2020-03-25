@@ -2,12 +2,13 @@ import cv2                                                                      
 import numpy as np                                                              # for numpy arrays
 import sqlite3
 import dlib
+import hashlib 
 import os                                                                       # for creating folders
 
 cap = cv2.VideoCapture(0)
 detector = dlib.get_frontal_face_detector()
 
-def insertOrUpdate(Id, Name, roll) :                                            # this function is for database
+def insertOrUpdate(Id, Name, roll,persontype,email,passhash) :                                            # this function is for database
     connect = sqlite3.connect("Face-DataBase")                                  # connecting to the database
     cmd = "SELECT * FROM Students WHERE ID = " + Id                             # selecting the row of an id into consideration
     cursor = connect.execute(cmd)
@@ -17,16 +18,30 @@ def insertOrUpdate(Id, Name, roll) :                                            
     if isRecordExist == 1:                                                      # updating name and roll no
         connect.execute("UPDATE Students SET Name = ? WHERE ID = ?",(Name, Id))
         connect.execute("UPDATE Students SET Roll = ? WHERE ID = ?",(roll, Id))
+        connect.execute("UPDATE Students SET perswontype = ? WHERE ID = ?",(persontype, Id))
+        connect.execute("UPDATE Students SET email = ? WHERE ID = ?",(email, Id))
+        connect.execute("UPDATE Students SET passowrd = ? WHERE ID = ?",(passhash, Id))
+        connect.execute("UPDATE Students SET quarantine = ? WHERE ID = ?",(0, Id))
+        
     else:
-    	params = (Id, Name, roll)                                               # insering a new student data
-    	connect.execute("INSERT INTO Students(ID, Name, Roll) VALUES(?, ?, ?)", params)
+    	params = (Id, Name, roll,persontype,email,passhash,0)                                               # insering a new student data
+    	connect.execute("INSERT INTO Students(ID, Name, Roll,perswontype,email,passowrd,quarantine) VALUES(?, ?, ?, ?, ?, ?, ?)", params)
     connect.commit()                                                            # commiting into the database
     connect.close()                                                             # closing the connection
 
-name = input("Enter student's name : ")
-roll = input("Enter student's Roll Number : ")
+name = input("Enter  name : ")
+roll = input("Enter Unique id : ")
+print("Doctor - 0")
+print("Chemist - 1")
+print("Citizen - 2")
+print("Person Type")
+persontype=int(input())
+email = input("Enter  email : ")
+password = input("Enter  password : ")
+hashcode = hashlib.md5(password.encode())  
+passhash=hashcode.hexdigest()
 Id = roll[-2:]
-insertOrUpdate(Id, name, roll)                                                  # calling the sqlite3 database
+insertOrUpdate(Id, name, roll,persontype,email,passhash)                                                  # calling the sqlite3 database
 
 
 folderName = "user" + Id                                                        # creating the person or user folder
