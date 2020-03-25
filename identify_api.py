@@ -39,8 +39,8 @@ def identify():
 		imagex = request.files["image"]
 		imagex.save(os.path.join(app.config["IMAGE_UPLOADS"], imagex.filename))
 
-		KEY = '2cfe4243d20342c2b49aeda55a4647f8'
-		ENDPOINT = 'https://faceapi0811.cognitiveservices.azure.com/'  # Replace with your regional Base URL
+		KEY = '2698a28d0b3a47be9a0177011b4fca38'
+		ENDPOINT = 'https://hackcovid.cognitiveservices.azure.com/'  # Replace with your regional Base URL
 
 		face_client = FaceClient(ENDPOINT, CognitiveServicesCredentials(KEY))
 		test_image_array = glob.glob(os.path.join(app.config["IMAGE_UPLOADS"], imagex.filename))		
@@ -115,8 +115,8 @@ def getpublickey():
 		imagex = request.files["image"]
 		imagex.save(os.path.join(app.config["LOGIN"], imagex.filename))
 
-		KEY = '2cfe4243d20342c2b49aeda55a4647f8'
-		ENDPOINT = 'https://faceapi0811.cognitiveservices.azure.com/'  
+		KEY = '2698a28d0b3a47be9a0177011b4fca38'
+		ENDPOINT = 'https://hackcovid.cognitiveservices.azure.com/'  
 
 		face_client = FaceClient(ENDPOINT, CognitiveServicesCredentials(KEY))
 		test_image_array = glob.glob(os.path.join(app.config["LOGIN"], imagex.filename))		
@@ -165,8 +165,8 @@ def getmedicines():
 		imagex = request.files["image"]
 		imagex.save(os.path.join(app.config["IMG_MEDICINES"], imagex.filename))
 
-		KEY = '2cfe4243d20342c2b49aeda55a4647f8'
-		ENDPOINT = 'https://faceapi0811.cognitiveservices.azure.com/'  
+		KEY = '2698a28d0b3a47be9a0177011b4fca38'
+		ENDPOINT = 'https://hackcovid.cognitiveservices.azure.com/'  
 
 		face_client = FaceClient(ENDPOINT, CognitiveServicesCredentials(KEY))
 		test_image_array = glob.glob(os.path.join(app.config["IMG_MEDICINES"], imagex.filename))		

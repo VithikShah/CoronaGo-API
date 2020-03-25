@@ -20,8 +20,8 @@ from azure.cognitiveservices.vision.face.models import TrainingStatusType, Perso
 from global_variables import personGroupId
 
 
-KEY = '2cfe4243d20342c2b49aeda55a4647f8'
-ENDPOINT = 'https://faceapi0811.cognitiveservices.azure.com/'  # Replace with your regional Base URL
+KEY = '2698a28d0b3a47be9a0177011b4fca38'
+ENDPOINT = 'https://hackcovid.cognitiveservices.azure.com/'  # Replace with your regional Base URL
 
 face_client = FaceClient(ENDPOINT, CognitiveServicesCredentials(KEY))
 
@@ -38,7 +38,7 @@ def get_person_id():
 	return person_id
 
 if len(sys.argv) is not 1:
-    images = glob.glob('/home/yuvi/projects/cv/Autoattendance-Cognitive/dataset/'+ str(sys.argv[1]) + '/*.jpg')
+    images = glob.glob('/home/yuvi/projects/hackcovid/CoronaGo-API/dataset/'+ str(sys.argv[1]) + '/*.jpg')
     person_id = get_person_id()
     for image in images:
         w = open(image,'r+b')
