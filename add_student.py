@@ -4,7 +4,7 @@ import sqlite3
 import dlib
 import hashlib 
 import os                                                                       # for creating folders
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture('./ab.mp4')
 detector = dlib.get_frontal_face_detector()
 
 def insertOrUpdate(Id, Name, roll,persontype,email,passhash) :                                            # this function is for database
