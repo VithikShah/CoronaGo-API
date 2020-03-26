@@ -5,7 +5,11 @@ We all know how much the world is suffering from COVID-19 as of now with lakhs i
 ## Starting the app
 
 **For running the app download the apk-debug.apk and install it.**
+- To login as a doctor, use images/test.jpg 
+- To login as a chemist, use images/test1.jpg
+- To login as a normal citizen, use images/test2.jpg
 
+[More details about the android application](https://github.com/VithikShah/CoronaGo-API/tree/master/CoronaGo-Android)
 
 This application can address follwing mentioned issues :
 
