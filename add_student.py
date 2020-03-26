@@ -4,7 +4,6 @@ import sqlite3
 import dlib
 import hashlib 
 import os                                                                       # for creating folders
-
 cap = cv2.VideoCapture(0)
 detector = dlib.get_frontal_face_detector()
 
@@ -29,11 +28,15 @@ def insertOrUpdate(Id, Name, roll,persontype,email,passhash) :                  
     connect.commit()                                                            # commiting into the database
     connect.close()                                                             # closing the connection
 
+ 
+
+
+
 name = input("Enter  name : ")
 roll = input("Enter Unique id : ")
-print("Doctor - 0")
+print("Citizen - 0")
 print("Chemist - 1")
-print("Citizen - 2")
+print("Doctor - 2")
 print("Person Type")
 persontype=int(input())
 email = input("Enter  email : ")

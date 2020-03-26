@@ -38,7 +38,7 @@ def get_person_id():
 	return person_id
 
 if len(sys.argv) is not 1:
-    images = glob.glob('/home/yuvi/projects/hackcovid/CoronaGo-API/dataset/'+ str(sys.argv[1]) + '/*.jpg')
+    images = glob.glob(os.getcwd() + '/dataset/'+ str(sys.argv[1]) + '/*.jpg')
     person_id = get_person_id()
     for image in images:
         w = open(image,'r+b')

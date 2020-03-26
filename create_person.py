@@ -13,8 +13,6 @@ import json
 import uuid
 import http
 import http.client, urllib.request, urllib.parse, urllib.error, base64
-
-
 import requests
 from urllib.parse import urlparse
 from io import BytesIO
