@@ -2,14 +2,30 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.coronago">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_corona"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_corona_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.SignInFaceActivity"    android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ui.AddInfoActivity"   android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.Scan1Activity"    android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.PaymentSetupActivity"   android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.Scan0Activity"   android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.SignInActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
