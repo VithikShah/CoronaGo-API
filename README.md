@@ -1,4 +1,30 @@
 # CoronaGo - Flask API
+
+We all know how much the world is suffering from COVID-19 as of now with lakhs infected and thousands deeased with the numbers rising everyday. We took an initative of building an application which can help in dealing with this problem even in any samllest way possible. 
+
+This application can address follwing mentioned issues :
+
+- **Finding a person who is Quarantined or Positive** : One main problem faced in these days is if a person is given orders to self-isolate/qurantine themself , they still roam out even by hiding the quarantine stamps put on their hands, so just by scanning a person's face(clicking there picture) it can be found that if they are quarantined/positive/normal. Only trusted authorities(doctors) can mark a person quarantined/positive/normal through there accounts. This will help normal citizens or police in finding out if a person is quarantined/positive/normal very easily. 
+
+**Reducing the physical contact** : We usually see the doctors give out prescription to patients on a paper and that paper goes through various hands and touches various surfaces which can lead to infection to a healthy person from unhealthy one. So whenever the doctor enters a medicine in prescription , it gets stored on blockchain ( its benefit discussed below). And whenever a patient goes to a chemist , chemist can know the prescriptions just by scanning the persons face and provide them with medicines without the need of any physical contact. The Payment can also be made by just scanning the face , no need of touching the currency. And everything is safe , as is it decentralised, Thanks to blockchain!.
+
+**A new hands-free Payment System** : As discussed above , there is a new payments system developed which works by just scanning a persons a face to pay them. And this whole system is decentralised on ethereum. So every transaction is recorded and is verified. 
+
+**An informative chat-bot** : This app also includes a chat-bot which can answer your questions regarding any doubts related to COVID-19. 
+
+**Current Situation Dashboard** :  It features a dashboard which gives current situation of Infected/Cured/Deceased Persons.
+
+All the above issues are addressed in the Application in a very systematic, clear and a safe manner using the below mentioned Technologies:
+- Flask
+- Ganache (Ethereum Blockchain)
+- Docker
+- AWS
+- Android Studio 
+- Computer Vision
+- Azure 
+- Dialogflow
+
+
 - Step 1: Training the model 
 For this you will need to add face data to the cognitive services . You will need to change the end point and the provided key the in code to run it on your systems ./
 a.First run the file add_student.py , and add the details . Pictures will be clicked during this time ./
