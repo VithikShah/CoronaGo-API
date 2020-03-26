@@ -76,9 +76,9 @@ Now for adding users into the database , you need to follow the follwig steps:
 
 - If you want to totally crteate new and your own data then you need to run the file create_person_group.py file by hardcoding the group name. In our case it was named test2.
 
-- Otherwise if you want to use just previous database ,Run the file add_student.py , and add the details such as name , email, unique number (any random number) atc. Pictures will be clicked during this time for training the model.
+- Otherwise if you want to use just previous database ,Run the file add_student.py , and add the details such as name , email, unique number (any random number) etc to register a new user in the database. Pictures will be clicked during this time for training the model.
 
-- Now run create_person.py along with agrument like User78 ( create_person.py User78) User78 which is created folder of face data in dataset folder. 78 in this case are the last two digits of unique number entered in previous step. You will  also be prompted to enter public key and private key of the ganache blockchain systems at this stage. Each pair of key must be used for one person only few of these keys for ypur testing are as given below:
+- Now run create_person.py along with agrument like User78 ( create_person.py User78) User78 which is created folder of face data in dataset folder. 78 in this case are the last two digits of unique number entered in previous step. You will  also be prompted to enter public key and private key of the ganache blockchain systems at this stage. Each pair of key must be used for one person only few of these keys for your testing are as given below:
 
 Public Keys : 
 
@@ -131,6 +131,9 @@ Private Keys :
 
 - Now all the face data is fed to the API and model is train to identify. It can be tested using identify.py and giving the path of the image of person to be identified
 
+When the users are entered , android app can be used to access all the features related to them. 
+
+All of the code is run by cloud services used by us so you just need to enter a new user from command line everything will be automatically updated in the databse and vailable for your use.
 
 ## Contributors and maintainers [&uarr;](#contents)
 
