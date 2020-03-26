@@ -52,12 +52,12 @@ All the above issues are addressed in the Application in a very systematic, clea
 - Face scanner based authentications and login.
 - Can login with email and password too.
 
-### Face Recognition based payment system
-- Online Wallet system based on face recognition
-
 ### Prescription Module based on Face Recognition
 - Doctors can add prescription for a patient.
 - Chemists can view the prescription of a particular patient by face recognition
+
+### Face Recognition based payment system
+- Online Wallet system based on face recognition
 
 ### Marking person type 
 - Doctors can mark a person as corona positive/ meant to be quarantined/ normal
