@@ -71,14 +71,15 @@ This application basically can two kind of interfaces that are accessible , one 
 
 Now for adding users into the database , you need to follow the follwig steps: 
 
- 
+- Download and install all requirements by **pip install -r requirements.txt**
+
 - You will need to change the end point and the provided key the in code to run it on your systems  if the ones provided by us have stopped working.
 
 - If you want to totally crteate new and your own data then you need to run the file create_person_group.py file by hardcoding the group name. In our case it was named test2.
 
-- Otherwise if you want to use just previous database ,Run the file add_student.py , and add the details such as name , email, unique number (any random number) etc to register a new user in the database. Pictures will be clicked during this time for training the model.
+- Otherwise if you want to use just previous database ,Run the file **add_student.py** , and add the details such as name , email, unique number (any random number) etc to register a new user in the database. Pictures will be clicked during this time for training the model.
 
-- Now run create_person.py along with agrument like User78 ( create_person.py User78) User78 which is created folder of face data in dataset folder. 78 in this case are the last two digits of unique number entered in previous step. You will  also be prompted to enter public key and private key of the ganache blockchain systems at this stage. Each pair of key must be used for one person only few of these keys for your testing are as given below:
+- Now run **create_person.py** along with agrument like User78 ( create_person.py User78) User78 which is created folder of face data in dataset folder. 78 in this case are the last two digits of unique number entered in previous step. You will  also be prompted to enter public key and private key of the ganache blockchain systems at this stage. Each pair of key must be used for one person only few of these keys for your testing are as given below:
 
 Public Keys : 
 
@@ -125,9 +126,9 @@ Private Keys :
 (9) 0x556cbe1d98273e17512fb1ea3d6c9c8dd10279af89e18078eb6a8555c1dc6ae5
 
 
-- Now run add_person_faces.py to add the face data in Face API .
+- Now run **add_person_faces.py** with argument (ex- User78) to add the face data in Face API .
 
-- Now run train.py to train the model .
+- Now run **train.py** to train the model .
 
 - Now all the face data is fed to the API and model is train to identify. It can be tested using identify.py and giving the path of the image of person to be identified
 
