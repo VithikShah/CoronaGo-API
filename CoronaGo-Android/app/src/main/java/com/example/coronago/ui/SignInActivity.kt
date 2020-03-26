@@ -1,11 +1,10 @@
 package com.example.coronago.ui
 
-import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
@@ -66,7 +65,9 @@ class SignInActivity : AppCompatActivity(), SignInListener {
 
     override fun onSuccessPassword(user: EmailUser) {
         sign_in_progress_bar.hide()
-        Log.v("login with password:", user.name.toString())
+        Log.v("login pass :", user.name.toString()  + user.type )
+        Toast.makeText(this, "Welcome, "+ user.name.toString(), Toast.LENGTH_SHORT).show()
+
         Intent(this, HomeActivity::class.java).also {
             val editor = sharedPref!!.edit()
             editor.putBoolean("signed_in", true)

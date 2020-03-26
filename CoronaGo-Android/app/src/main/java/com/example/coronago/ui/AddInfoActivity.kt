@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.example.coronago.R
@@ -55,6 +56,8 @@ class AddInfoActivity : AppCompatActivity(), GetInfoSetupClickListener, AddInfoL
     override fun onSuccessInfo(addInfo: AddInfo) {
         progress_bar.hide()
         Log.v("success addinfo", addInfo.status.toString())
+        Toast.makeText(this, "Added Successfully", Toast.LENGTH_SHORT).show()
+
         Intent(this, HomeActivity::class.java).also {
             startActivity(it)
         }

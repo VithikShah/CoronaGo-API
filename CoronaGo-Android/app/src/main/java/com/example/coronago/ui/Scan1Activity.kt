@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.example.coronago.R
@@ -22,12 +23,12 @@ import kotlinx.android.synthetic.main.activity_scan1.*
 
 class Scan1Activity : AppCompatActivity(), GetInfoSetupClickListener, Scan1Listener {
     var viewModel: Scan1ViewModel? = null
-
+    var sharedPref2: SharedPreferences? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val sharedPref2: SharedPreferences = getSharedPreferences("type", 0)
+        sharedPref2 = getSharedPreferences("type", 0)
 
-        val type: Int = sharedPref2.getInt("type", 0)
+        val type: Int = sharedPref2!!.getInt("type", 0)
         val binding: ActivityScan1Binding =
             DataBindingUtil.setContentView(this, R.layout.activity_scan1)
 
@@ -54,6 +55,29 @@ class Scan1Activity : AppCompatActivity(), GetInfoSetupClickListener, Scan1Liste
     override fun onSuccessInfo(getInfo: GetInfo) {
         progress_bar.hide()
         Log.v("succe getinfo 1status:", getInfo.status.toString())
+
+        if(sharedPref2!!.getInt("type", 0) == 0 ) {
+            if (getInfo.status == 0) {
+                Toast.makeText(this, "Person is Normal", Toast.LENGTH_SHORT).show()
+            }
+            if (getInfo.status == 1) {
+                Toast.makeText(this, "Person is meant to be Quarantined", Toast.LENGTH_SHORT).show()
+            }
+            if (getInfo.status == 2) {
+                Toast.makeText(this, "Person is Corona Positive", Toast.LENGTH_SHORT).show()
+            }
+
+        }else{
+            if (getInfo.status == 0) {
+                Toast.makeText(this, "Normal + " + getInfo.medicines.toString(), Toast.LENGTH_SHORT).show()
+            }
+            if (getInfo.status == 1) {
+                Toast.makeText(this, "Quarantined + " + getInfo.medicines.toString(), Toast.LENGTH_SHORT).show()
+            }
+            if (getInfo.status == 2) {
+                Toast.makeText(this, "Corona Positive + " + getInfo.medicines.toString(), Toast.LENGTH_SHORT).show()
+            }
+        }
         Intent(this, HomeActivity::class.java).also {
             startActivity(it)
         }

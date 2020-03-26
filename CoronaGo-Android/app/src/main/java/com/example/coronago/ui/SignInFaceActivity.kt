@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.example.coronago.R
@@ -65,6 +66,8 @@ class SignInFaceActivity : AppCompatActivity(), GetInfoSetupClickListener, SignI
     override fun onSuccessInfo(user: User) {
         progress_bar.hide()
         Log.v("login with face:", user.name.toString())
+        Toast.makeText(this, "Welcome, " + user.name.toString(), Toast.LENGTH_SHORT).show()
+
         Intent(this, HomeActivity::class.java).also {
             val editor = sharedPref!!.edit()
             editor.putBoolean("signed_in", true)

@@ -11,9 +11,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.coronago.R
 import com.example.coronago.data.network.CoronaApi
+import com.example.coronago.data.network.MyApi
 import com.example.coronago.data.network.NetworkConnectionInterceptor
 import com.example.coronago.data.network.responses.PaymentSetup
 import com.example.coronago.data.repositories.CoronaRepository
+import com.example.coronago.data.repositories.PaymentRepository
 import com.example.coronago.databinding.ActivityHomeBinding
 import com.example.coronago.utils.ApiException
 import com.example.coronago.utils.Coroutines
@@ -22,9 +24,11 @@ import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
     var binding: ActivityHomeBinding? = null
+    var sharedPref3: SharedPreferences? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        sharedPref3 = getSharedPreferences("public_key", 0)
         val sharedPref2: SharedPreferences = getSharedPreferences("type", 0)
         val sharedPref: SharedPreferences = getSharedPreferences("signed_in", 0)
 
@@ -33,6 +37,10 @@ class HomeActivity : AppCompatActivity() {
         val networkConnectionInterceptor = NetworkConnectionInterceptor(this)
         val api = CoronaApi(networkConnectionInterceptor)
         val repository = CoronaRepository(api)
+        val networkConnectionInterceptor2 = NetworkConnectionInterceptor(this)
+        val api2 = MyApi(networkConnectionInterceptor2)
+        val repository2 = PaymentRepository(api2)
+
         val factory = HomeViewModelFactory(repository, this)
         val viewModel = ViewModelProviders.of(this, factory).get(HomeViewModel::class.java)
 //        viewModel.getIndia()
@@ -88,6 +96,11 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
+
+        val public_key: String? = sharedPref3!!.getString("public_key", "")
+        binding!!.balance.text = ("Balance: 1000")
+
+
         Coroutines.main {
             val unit = try {
                 val imageResponse =
@@ -113,6 +126,22 @@ class HomeActivity : AppCompatActivity() {
                     binding!!.indiadata.text =
                         "Cases: " + it!!.cases.toString() + " Deaths: " + it!!.deaths.toString() + " Recovered: " + it!!.recovered.toString()
                     return@main
+                }
+            } catch (e: ApiException) {
+                Log.v("apiexcept", "test1")
+
+            } catch (e: NoInternetExcepetion) {
+                Log.v("internet except", "test1")
+
+            }
+
+            val unit3 = try {
+                val imageResponse =
+                    repository2.balance(public_key!!)
+                Log.v("after", "main activity get data live")
+                imageResponse.let {
+                    binding!!.balance.text = ("Balance: 1000")
+                        return@main
                 }
             } catch (e: ApiException) {
                 Log.v("apiexcept", "test1")

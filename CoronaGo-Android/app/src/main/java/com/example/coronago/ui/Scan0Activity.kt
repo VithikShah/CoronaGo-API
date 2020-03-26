@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.example.coronago.R
@@ -50,6 +51,15 @@ class Scan0Activity : AppCompatActivity(), GetInfoSetupClickListener, Scan0Liste
     override fun onSuccessInfo(getInfo0: GetInfo0) {
         progress_bar.hide()
         Log.v("success get info status", getInfo0.status.toString())
+        if(getInfo0.status == 0) {
+            Toast.makeText(this, "Person is Normal", Toast.LENGTH_SHORT).show()
+        }
+        if(getInfo0.status == 1) {
+            Toast.makeText(this, "Person is meant to be Quarantined", Toast.LENGTH_SHORT).show()
+        }
+        if(getInfo0.status == 2) {
+            Toast.makeText(this, "Person is Corona Positive", Toast.LENGTH_SHORT).show()
+        }
         Intent(this, MainActivity::class.java).also {
             startActivity(it)
         }

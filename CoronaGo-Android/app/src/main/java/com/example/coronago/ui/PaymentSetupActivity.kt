@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.example.coronago.R
@@ -61,15 +62,17 @@ class PaymentSetupActivity : AppCompatActivity(), GetInfoSetupClickListener, Pay
     override fun onSuccessPaymentSetup(paymentSetup: PaymentSetup) {
         progress_bar.hide()
         Log.v("success get payment : ", paymentSetup.status.toString())
+        Toast.makeText(this, "Transferred Succesfully", Toast.LENGTH_SHORT).show()
+
         Intent(this, HomeActivity::class.java).also {
             startActivity(it)
         }
+        finish()
     }
 
     override fun onCameraButtonClick(view: View) {
 
         ImagePicker.with(this)
-            .cameraOnly()
             .crop(
                 1f,
                 1f
