@@ -23,6 +23,7 @@ from global_variables import personGroupId
 from web3 import Web3
 import werkzeug
 import json
+import hashlib 
 
 app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -158,7 +159,7 @@ def login():
 
 		return jsonify({"name": row[1], "publickey":row[4], "privatekey": row[5], "type": row[9]})
 
-# @app.route('/getmedicines', methods=['POST'])
+
 
 @app.route('/getinfo', methods=['POST'])
 def getinfo():
@@ -287,7 +288,24 @@ def balance():
 		ganache_url = "http://ec2-54-175-197-129.compute-1.amazonaws.com:8545"
 		web3 = Web3(Web3.HTTPProvider(ganache_url))
 		balance = web3.eth.getBalance(request.form.get('publickey'))
-		return jsonify({"balance": balance})
+		return jsonify({"balance": str(balance)})
+
+
+@app.route('/emaillogin', methods=['POST'])
+def emaillogin():
+	if request.method == 'POST':
+		email = request.form.get('email')
+		password = request.form.get('password')
+		hashcode = hashlib.md5(password.encode())  
+		passhash=hashcode.hexdigest()
+		connect = sqlite3.connect("Face-DataBase")
+		c=connect.cursor()
+		c.execute("SELECT * FROM Students WHERE email = ?", (email,))
+		row = c.fetchone()
+		if row and row[7] == passhash:
+			return jsonify({"message": "valid","name": row[1], "publickey":row[4], "privatekey": row[5], "type": row[9]})
+		else:
+			return jsonify({"message": "invalid"})
 
 
 if __name__ == '__main__':

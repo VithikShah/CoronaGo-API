@@ -24,8 +24,8 @@ from web3 import Web3
 			
 
 
-KEY = '2cfe4243d20342c2b49aeda55a4647f8'
-ENDPOINT = 'https://faceapi0811.cognitiveservices.azure.com/'  # Replace with your regional Base URL
+KEY = '2698a28d0b3a47be9a0177011b4fca38'
+ENDPOINT = 'https://hackcovid.cognitiveservices.azure.com/'  # Replace with your regional Base URL
 
 face_client = FaceClient(ENDPOINT, CognitiveServicesCredentials(KEY))
 
@@ -54,13 +54,21 @@ for person in results:
     print(person.candidates[0].person_id)
     res=person.candidates[0].person_id
 
-print(res)
 connect = sqlite3.connect("Face-DataBase")
 c=connect.cursor()
 c.execute("SELECT * FROM Students WHERE personID = ?", (res,))
 row = c.fetchone()
 print(row[1] + " recognized")
-
+if(row[8]==0):
+    print("Is Not Quarantined")
+else:
+    print("Is Quarantined")
+if(row[9]==0):
+    print("Is Doctor")
+elif (row[9]==1):
+    print("Is Chemist")
+else:
+    print("Is Citizen")
 c=connect.cursor()
 c.execute("SELECT * FROM Students WHERE personID = ?", (res,))
 row = c.fetchone()
