@@ -1,5 +1,4 @@
-# CoronaGo  
-# Ethereum Blockchain 
+# CoronaGo  - Powered By Ethereum Blockchain 
 
 We all know how much the world is suffering from COVID-19 as of now with lakhs infected and thousands deeased with the numbers rising everyday. We took an initative of building an application which can help in dealing with this problem even in any samllest way possible. 
 
