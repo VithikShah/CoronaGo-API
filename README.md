@@ -25,6 +25,48 @@ All the above issues are addressed in the Application in a very systematic, clea
 - Dialogflow
 
 
+ 
+
+
+## Contents 
+* [End Users and accesible features](#end-users-)
+* [Modules](#modules-)
+* [Setting Up](#setting-up-)
+
+## End Users and accesible features [&uarr;](#contents)
+- There are three kind of end users of the application
+- **Chemist** : A chemist can see what medicines are prescibed to a particular patient by just scanning a person's face using facial identification. He/She can only see the medicines but not change them.  
+- **Doctor** : Can add prescription of a particular patient and mark them qurantined/positive/normal .
+- **Citizen** : These include the features available to all. These features are checking if a person is qurantined/positive/normal using facial identification, no physical contact payment system, dashboard and a chat-bot.
+
+## Modules [&uarr;](#contents)
+### Live COVID-19 Global Status
+- Live updates on the statistics related to COVID-19 cases worldwide.
+- Accessible by anyone, no need for signin.
+
+### Quarantine Check
+- Face scanner based check the status of a person: If a person is (corona positive/ meant to be quarantined/ normal).
+- Accessible by anyone, no need for signin.
+
+### Visual Base Authentication
+- Face scanner based authentications and login.
+- Can login with email and password too.
+
+### Face Recognition based payment system
+- Online Wallet system based on face recognition
+
+### Prescription Module based on Face Recognition
+- Doctors can add prescription for a patient.
+- Chemists can view the prescription of a particular patient by face recognition
+
+### Marking person type 
+- Doctors can mark a person as corona positive/ meant to be quarantined/ normal
+
+### Chat-bot 
+- A chat-bot which can clear doubts regarding Covid-19 based on WHO's database
+ 
+## Setting Up [&uarr;](#contents) 
+
 - Step 1: Training the model 
 For this you will need to add face data to the cognitive services . You will need to change the end point and the provided key the in code to run it on your systems ./
 a.First run the file add_student.py , and add the details . Pictures will be clicked during this time ./
@@ -49,39 +91,7 @@ Also you need to host your localhost on web using Pagekite like platforms , as i
 a.Next you need to run the apk in your mobile from anroid studio . 
 b. Now the person needs to click his/her picture to login .
 c. Now you will have options such as pay someone or buy medicines . 
-d. You may choose anyone of them to proceed further . These are blockchain based features 
-
-
-## Contents 
-* [End Users](#end-users-)
-* [Modules](#modules-)
-
-## End Users [&uarr;](#contents)
-- There are three kind of end users of the application
-- **Chemist** 
-- **Doctor**
-- **Citizen**
-
-## Modules [&uarr;](#contents)
-### Live COVID-19 Global Status
-- Live updates on the statistics related to COVID-19 cases worldwide.
-- Accessible by anyone, no need for signin.
-
-### Quarantine Check
-- Face scanner based check the status of a person: If a person is (corona positive/ meant to be quarantined/ normal).
-- Accessible by anyone, no need for signin.
-
-### Visual Base Authentication
-- Face scanner based authentications and login.
-- Can login with email and password too.
-
-### Face Recognition based payment system
-- Online Wallet system based on face recognition
-
-### Prescription Module based on Face Recognition
-- Doctors can add prescription for a patient, also they can change status of a person as  positive/ meant to be quarantined/ normal.
-- Chemists can view the prescription of a particular patient by face recognition
-
+d. You may choose anyone of them to proceed further . These are blockchain based features
 ## Contributors and maintainers [&uarr;](#contents)
 
 This project and repository is created and maintained by:
