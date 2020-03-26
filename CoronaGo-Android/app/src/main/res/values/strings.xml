@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">CoronaGo</string>
+    <string name="sign_in_to_continue">Sign In To Continue</string>
+    <string name="sign_in_with_face_id">Sign In with Face ID</string>
+    <string name="sign_in_with_password">Sign In with Password</string>
+    <string name="e_mail_address">E-mail Address</string>
+    <string name="password">Password</string>
+    <string name="scan_person">Scan Person</string>
+    <string name="continue_to_app">Continue To App</string>
+    <string name="covid_19_global">COVID-19 Global</string>
+    <string name="covid_19_india">COVID-19 India</string>
+    <string name="global_data">Global Data</string>
+    <string name="india_data">India Data</string>
 </resources>

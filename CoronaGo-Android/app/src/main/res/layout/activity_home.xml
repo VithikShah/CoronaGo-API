@@ -6,8 +6,8 @@
 
     <data>
         <variable
-            name="mainViewModel"
-            type="com.example.coronago.ui.MainViewModel" />
+            name="homeViewModel"
+            type="com.example.coronago.ui.HomeViewModel" />
     </data>
     <ScrollView
         android:layout_width="match_parent"
@@ -54,8 +54,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-medium"
+                        android:text="temp"
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="20sp" />
+                        android:textSize="28sp" />
 
                     <TextView
                         android:id="@+id/india_text"
@@ -74,13 +75,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-medium"
+                        android:text="temp"
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="20sp" />
+                        android:textSize="28sp" />
 
                 </RelativeLayout>
 
                 <Button
-                    android:id="@+id/scanButton"
+                    android:id="@+id/walletButton"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/linear"
@@ -88,19 +90,43 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="60dp"
                     android:background="@drawable/bg_signin_button"
-                    android:text="@string/scan_person"
+                    android:text="PaymentWallet"
                     android:textColor="@color/colorAccent" />
 
                 <Button
-                    android:id="@+id/continueButton"
+                    android:id="@+id/scanButton"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/linear"
+                    android:layout_below="@+id/walletButton"
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="center"
-                    android:layout_marginTop="130dp"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/bg_signin_button"
-                    android:text="@string/continue_to_app"
+                    android:text="Get Info of Person"
+                    android:textColor="@color/colorAccent" />
+
+                <Button
+                    android:id="@+id/logoutButton"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/scanButton"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_signin_button"
+                    android:text="Logout from App"
+                    android:textColor="@color/colorAccent" />
+                <Button
+                    android:id="@+id/addInfoButton"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/logoutButton"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_signin_button"
+                    android:text="Add Person's Info"
+                    android:visibility="gone"
                     android:textColor="@color/colorAccent" />
 
             </RelativeLayout>
@@ -108,4 +134,5 @@
         </RelativeLayout>
 
     </ScrollView>
+
 </layout>
