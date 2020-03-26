@@ -67,31 +67,71 @@ All the above issues are addressed in the Application in a very systematic, clea
  
 ## Setting Up [&uarr;](#contents) 
 
-- Step 1: Training the model 
-For this you will need to add face data to the cognitive services . You will need to change the end point and the provided key the in code to run it on your systems ./
-a.First run the file add_student.py , and add the details . Pictures will be clicked during this time ./
-b.Then run the file create_person_group.py . this will create a person group , in our case it was test1 . 
-c.Now run create_person.py along with agrument like User78 ( which is created folder of face data in dataset folder) , to create a person the local as well as cloud database . You also be prompted to enter public key of the ganache blockchain systems at this stage .
-d. Now run add_person_faces.py to add the faces in Face API . 
-e. Now run train.py to train the model .
+This application basically can two kind of interfaces that are accessible , one is the anroid app and the other is through command line on which more users can be added. For the android app , all of its features are explained as above. For setting up this application , you will only need to clone this repo for adding more users according to your choice and just download the android app frm tis link (insert google drive link here) and the rest all is done cloud. The endpoints of all the cloud services used by us (like Azure,AWS,Heroku) can be changed by the person who wants to use this project. 
 
-Now all the face data is fed to the API and model is train to identify 
+Now for adding users into the database , you need to follow the follwig steps: 
 
-- Step2 : 
+ 
+- You will need to change the end point and the provided key the in code to run it on your systems  if the ones provided by us have stopped working.
+
+- If you want to totally crteate new and your own data then you need to run the file create_person_group.py file by hardcoding the group name. In our case it was named test2.
+
+- Otherwise if you want to use just previous database ,Run the file add_student.py , and add the details such as name , email, unique number (any random number) atc. Pictures will be clicked during this time for training the model.
+
+- Now run create_person.py along with agrument like User78 ( create_person.py User78) User78 which is created folder of face data in dataset folder. 78 in this case are the last two digits of unique number entered in previous step. You will  also be prompted to enter public key and private key of the ganache blockchain systems at this stage. Each pair of key must be used for one person only few of these keys for ypur testing are as given below:
+
+Public Keys : 
+
+(0) 0x2b2DE785Bace5D4A20cfDB96083F9F378A88918b (100 ETH) - currently used for yuvraj 
+
+(1) 0xCf8042790381055fDBc22D709dE49f24a4c963a6 (100 ETH) - currently used for vithik
+
+(2) 0xbfD11E0314035e68471804626802759E54c526af (100 ETH)- currently used for manas
+
+(3) 0x5e65ED58D512ffB1Fe0e52Cd62997736499f8871 (100 ETH)
+
+(4) 0xbb8889a2DFBa8F28A7Ab5a598237fc0651D439b2 (100 ETH)
+
+(5) 0x585b001795da51417ccA2d75912572601d147a3C (100 ETH)
+
+(6) 0x1f3FF2e0CF12107a7c26b067623c711AdE8FCF12 (100 ETH)
+
+(7) 0x8cEAFccf737c7C9f2F4aC21FE0702D12Ad21294b (100 ETH)
+
+(8) 0x638017C8443005D8A74C81A76fEE2Cf6E1DF6e97 (100 ETH)
+
+(9) 0x4A60eCB846335df0321267426880F9aEad3aF569 (100 ETH)
+
+Private Keys : 
+
+(0) 0xd9ee17bd6a58e2514033425de61cc6f452eec902c4eb232be393be28b78c64bc
+
+(1) 0x8da286497a3af3443a81d0c89db483c0782a41516ab4db778cbce58922d5a3e8
+
+(2) 0x71c63d975a83d6c324b86836cccd084dcb0f6228162a9bb69ccc48f9efd8f73b
+
+(3) 0x070f9333922f03957aebd08a958b1e71e05704c0a1fb39aeb96efe7495f9d414
+
+(4) 0x27358a48182780c276894bfa3aa56e21d8e590724a57fdbc6342816eece0f174
+
+(5) 0xf5cc26f92f6fbaecfc69ca38e821aa3da4c46265fc3b9a92c502efa2b8bb38de
+
+(6) 0xc57f0a019a529c73e66332f69c6a3cedf4dec17712066a667472b5eb35ee6075
+
+(7) 0x5f69585af4f4dc620f952ada83f5598a953fe60dbb97a1fa594188f0bff5f925
+
+(8) 0xd3b9ee785fab818d95c5987c12eb930a1a6d48756b4b91e7fb21ad311e04ce4f
+
+(9) 0x556cbe1d98273e17512fb1ea3d6c9c8dd10279af89e18078eb6a8555c1dc6ae5
 
 
-For this step you need to have flask installed in your system as we will be creating Flask API for the android app .
-a. Run identify_api.py to set up the API server . 
+- Now run add_person_faces.py to add the face data in Face API .
 
-Also you need to host your localhost on web using Pagekite like platforms , as it will support our blockchain based platform . 
+- Now run train.py to train the model .
+
+- Now all the face data is fed to the API and model is train to identify. It can be tested using identify.py and giving the path of the image of person to be identified
 
 
-- Step3 :
-
-a.Next you need to run the apk in your mobile from anroid studio . 
-b. Now the person needs to click his/her picture to login .
-c. Now you will have options such as pay someone or buy medicines . 
-d. You may choose anyone of them to proceed further . These are blockchain based features
 ## Contributors and maintainers [&uarr;](#contents)
 
 This project and repository is created and maintained by:
