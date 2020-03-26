@@ -1,4 +1,5 @@
-# CoronaGo - Flask API
+# CoronaGo  
+# Ethereum Blockchain 
 
 We all know how much the world is suffering from COVID-19 as of now with lakhs infected and thousands deeased with the numbers rising everyday. We took an initative of building an application which can help in dealing with this problem even in any samllest way possible. 
 
@@ -11,6 +12,8 @@ This application can address follwing mentioned issues :
 **A new hands-free Payment System** : As discussed above , there is a new payments system developed which works by just scanning a persons a face to pay them. And this whole system is decentralised on ethereum. So every transaction is recorded and is verified. 
 
 **An informative chat-bot** : This app also includes a chat-bot which can answer your questions regarding any doubts related to COVID-19. 
+
+**Public Health Record System** : As it is a decentralised platform on blockchain all medical records are saved. 
 
 **Current Situation Dashboard** :  It features a dashboard which gives current situation of Infected/Cured/Deceased Persons.
 
