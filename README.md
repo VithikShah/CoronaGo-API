@@ -2,6 +2,11 @@
 
 We all know how much the world is suffering from COVID-19 as of now with lakhs infected and thousands deeased with the numbers rising everyday. We took an initative of building an application which can help in dealing with this problem even in any samllest way possible. 
 
+## Starting the app
+
+**For running the app download the apk-debug.apk and install it.**
+
+
 This application can address follwing mentioned issues :
 
 **Finding a person who is Quarantined or Positive** : One main problem faced in these days is if a person is given orders to self-isolate/qurantine themself , they still roam out even by hiding the quarantine stamps put on their hands, so just by scanning a person's face(clicking there picture) it can be found that if they are quarantined/positive/normal. Only trusted authorities(doctors) can mark a person quarantined/positive/normal through there accounts. This will help normal citizens or police in finding out if a person is quarantined/positive/normal very easily. 
