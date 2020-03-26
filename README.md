@@ -2,6 +2,10 @@
 
 We all know how much the world is suffering from COVID-19 as of now with lakhs infected and thousands deeased with the numbers rising everyday. We took an initative of building an application which can help in dealing with this problem even in any samllest way possible. 
 
+## App Demo
+The working video and the android apk for **CoronaGo** click on the following google drive link:
+[Google Drive LInk](https://drive.google.com/open?id=1-M-qrHb0ZhW53mQyjVekWE4ZW8-1wM-P)
+
 ## Starting the app
 
 **For running the app download the apk-debug.apk and install it.**
