@@ -1,42 +1,39 @@
-
-
-{% block title %}Upload{% endblock %}
-
-{% block main %}
+{% block title %}Upload{% endblock %} {% block main %}
 
 <div class="container">
   <div class="row">
     <div class="col">
-
       <h1>Upload an image</h1>
-      <hr>
+      <hr />
 
       <form action="/identify" method="POST" enctype="multipart/form-data">
-
         <div class="form-group">
           <label>Select image</label>
           <div class="custom-file">
-            <input type="file" class="custom-file-input" name="image" id="image">
+            <input
+              type="file"
+              class="custom-file-input"
+              name="image"
+              id="image"
+            />
             <label class="custom-file-label" for="image">Select image...</label>
           </div>
           <div>
-            <input type="text" name="public" id="public">
+            <input type="text" name="public" id="public" />
             <label for="public">Public Key</label>
           </div>
-         <div>
-            <input type="text" name="private" id="private">
+          <div>
+            <input type="text" name="private" id="private" />
             <label for="private">Private Key</label>
           </div>
-            <div>
-            <input type="number" name="amount" id="amount">
+          <div>
+            <input type="number" name="amount" id="amount" />
             <label for="amount">Ethers</label>
           </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
-
       </form>
-
     </div>
   </div>
 </div>

@@ -17,15 +17,9 @@ from global_variables import personGroupId
 from web3 import Web3
 
 
-
-
-
-
-			
-
-
 KEY = '2698a28d0b3a47be9a0177011b4fca38'
-ENDPOINT = 'https://hackcovid.cognitiveservices.azure.com/'  # Replace with your regional Base URL
+# Replace with your regional Base URL
+ENDPOINT = 'https://hackcovid.cognitiveservices.azure.com/'
 
 face_client = FaceClient(ENDPOINT, CognitiveServicesCredentials(KEY))
 
@@ -47,29 +41,31 @@ print(face_ids)
 results = face_client.face.identify(face_ids, personGroupId)
 print('Identifying faces in {}'.format(os.path.basename(image.name)))
 if not results:
-    print('No person identified in the person group for faces from {}.'.format(os.path.basename(image.name)))
-res=0
+    print('No person identified in the person group for faces from {}.'.format(
+        os.path.basename(image.name)))
+res = 0
 for person in results:
-    print('Person for face ID {} is identified in {} with a confidence of {}.'.format(person.face_id, os.path.basename(image.name), person.candidates[0].confidence)) # Get topmost confidence score
+    print('Person for face ID {} is identified in {} with a confidence of {}.'.format(person.face_id,
+                                                                                      os.path.basename(image.name), person.candidates[0].confidence))  # Get topmost confidence score
     print(person.candidates[0].person_id)
-    res=person.candidates[0].person_id
+    res = person.candidates[0].person_id
 
 connect = sqlite3.connect("Face-DataBase")
-c=connect.cursor()
+c = connect.cursor()
 c.execute("SELECT * FROM Students WHERE personID = ?", (res,))
 row = c.fetchone()
 print(row[1] + " recognized")
-if(row[8]==0):
+if(row[8] == 0):
     print("Is Not Quarantined")
 else:
     print("Is Quarantined")
-if(row[9]==0):
+if(row[9] == 0):
     print("Is Doctor")
-elif (row[9]==1):
+elif (row[9] == 1):
     print("Is Chemist")
 else:
     print("Is Citizen")
-c=connect.cursor()
+c = connect.cursor()
 c.execute("SELECT * FROM Students WHERE personID = ?", (res,))
 row = c.fetchone()
 
@@ -80,7 +76,7 @@ print('private_key', private_key)
 
 amount = int(input('Enter Ethers'))
 print(amount)
-connect.commit() 
+connect.commit()
 connect.close()
 ganache_url = "http://127.0.0.1:7545"
 web3 = Web3(Web3.HTTPProvider(ganache_url))
@@ -97,9 +93,6 @@ tx = {
 signed_tx = web3.eth.account.signTransaction(tx, private_key)
 
 
-
 tx_hash = web3.eth.sendRawTransaction(signed_tx.rawTransaction)
 print(web3.toHex(tx_hash))
-
-
 

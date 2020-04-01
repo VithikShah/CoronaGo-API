@@ -16,7 +16,8 @@ from global_variables import personGroupId
 
 
 KEY = '2698a28d0b3a47be9a0177011b4fca38'
-ENDPOINT = 'https://hackcovid.cognitiveservices.azure.com/'  # Replace with your regional Base URL
+# Replace with your regional Base URL
+ENDPOINT = 'https://hackcovid.cognitiveservices.azure.com/'
 
 face_client = FaceClient(ENDPOINT, CognitiveServicesCredentials(KEY))
 
