@@ -162,27 +162,3 @@ All of the code is run by cloud services used by us so you just need to enter a 
 ## Contributors and maintainers [&uarr;](#contents)
 
 This project and repository is created and maintained by:
-
-### Project created under the [HackCovid19](https://hackcovid19.devfolio.co) hackathon
-
-### Team name: codeonkailash
-
-### Team members:
-
-- **Yuvraj Dalia (Team Lead)**
-
-Email: yuvrajdalia98@gmail.com
-
-Github: [yuvrajdalia](https://github.com/yuvrajdalia)
-
-- **Manas Gupta**
-
-Email: manasgupta1109@gmail.com
-
-Github: [manas11](https://github.com/manas11)
-
-- **Vithik Shah**
-
-Email: vithikshah@gmail.com
-
-Github: [VithikShah](https://github.com/VithikShah)
