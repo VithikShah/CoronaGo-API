@@ -3,7 +3,7 @@ attrs==19.3.0
 azure-cognitiveservices-vision-face==0.4.0
 azure-common==1.1.25
 base58==2.0.0
-certifi==2019.11.28
+certifi==2022.12.7
 chardet==3.0.4
 click==7.1.1
 cmake==3.16.3
